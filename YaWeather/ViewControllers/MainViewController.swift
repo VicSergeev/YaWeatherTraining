@@ -9,7 +9,7 @@ import UIKit
 
 // сторики remove reference
 
-final class MainViewController: UIViewController { // почему бы просто не унаследоваться от TV или унаследовать делегата и датасорс?
+final class MainViewController: UIViewController {
     
     var tableView = UITableView()
 
