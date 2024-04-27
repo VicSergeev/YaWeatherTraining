@@ -36,7 +36,7 @@ private extension MainViewController {
     }
     
     func setTableViewDelegates() {
-        tableView.delegate = self // self is MainVC
+        tableView.delegate = self // MainVC
         tableView.dataSource = self
     }
 }

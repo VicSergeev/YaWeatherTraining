@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // initialize var window with class UIWindow
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
-        // UIWindow class that responsible for windows in which might be located VCs
+        // UIWindow class that responsible for window in which might be located VCs
         // this window has to be crutial and visible
         window?.makeKeyAndVisible() // now window is main
         
