@@ -18,10 +18,11 @@ struct DayModel{
 final class MainViewController: UIViewController {
     
     //MARK: - ДЗ (Lazy - читать) ✅
+    // сделал конспект
     
     var tableView = UITableView()
     
-    var dataDaySourse: [DayModel] = [
+    var dataDaySource: [DayModel] = [
         DayModel(date: "10 Апреля", day: "Вторник"),
         DayModel(date: "11 Апреля", day: "Среда"),
         DayModel(date: "12 Апреля", day: "Черверг"),
@@ -59,6 +60,7 @@ private extension MainViewController {
         setTableViewDelegates()
         // register cells
         tableView.register(DayWeatherTableViewCell.self, forCellReuseIdentifier: "DayWeatherTableViewCell")
+        tableView.register(HeaderTableViewCell.self, forCellReuseIdentifier: "HeaderCell")
         
         //set constraints
         tableView.pin(to: view)
@@ -85,7 +87,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        TBSections(rawValue: section) == .top ? 1 : dataDaySourse.count
+        TBSections(rawValue: section) == .top ? 1 : dataDaySource.count
+        
+        // было
         //        if section == 0 {
         //            return 1
         //        } else {
@@ -95,23 +99,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let tbSection = TBSections(rawValue: indexPath.section)!
-        
-        
-        
-        
+        // надо ли создавать отдельный файл для верхней кастомной ячейки?
         switch tbSection {
         case .top :
-            let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-            
-            cell.backgroundColor = .red
-            return cell
+            let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! HeaderTableViewCell
+            return headerCell
         case .list :
             //			let day = dataDaySourse[indexPath.row]
             let dayCell = tableView.dequeueReusableCell(withIdentifier: "DayWeatherTableViewCell", for: indexPath) as! DayWeatherTableViewCell
             
-            dayCell.day = dataDaySourse[indexPath.row]
+            dayCell.day = dataDaySource[indexPath.row]
             
             //			dayCell.configureCell(day.day, day.date)
             
@@ -168,7 +166,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         //		let vc = NewVC(day: TBSections(rawValue: indexPath.section) == .top ? nil : dataDaySourse[indexPath.row])
         let vc = NewVC()
-        vc.day = TBSections(rawValue: indexPath.section) == .top ? nil : dataDaySourse[indexPath.row]
+        vc.day = TBSections(rawValue: indexPath.section) == .top ? nil : dataDaySource[indexPath.row]
         //		self.present(vc, animated: true)
         
         navigationController?.pushViewController(vc, animated: true)

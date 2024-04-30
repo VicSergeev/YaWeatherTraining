@@ -58,6 +58,8 @@ final class DayWeatherTableViewCell: BaseTableViewCell {
         return label
     }()
 	
+    // HOME TASK END
+    
 	var day: DayModel? {
 		didSet{
 			guard let day else { return }
