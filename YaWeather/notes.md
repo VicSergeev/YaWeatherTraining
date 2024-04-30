@@ -22,7 +22,7 @@ struct Player {
     var height: Int
     
     lazy var intro = {
-        return "Hello, this is \(name) and I'm \(height) meters tall"
+        return "Hello, this is \(name) and I'm \(height) cm tall"
     }
 }
 свойство intro должно возвращать конкретную инфу из name и height
