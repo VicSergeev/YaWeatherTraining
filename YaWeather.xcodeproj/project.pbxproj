@@ -13,6 +13,8 @@
 		189B66E72BD79AF10011AED1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B66E62BD79AF10011AED1 /* MainViewController.swift */; };
 		189B66EC2BD79AF30011AED1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 189B66EB2BD79AF30011AED1 /* Assets.xcassets */; };
 		18C1C9ED2BDD44DA0056773D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 18C1C9EC2BDD44DA0056773D /* SnapKit */; };
+		6BE74A892BDD4FE900C9C04C /* NewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE74A882BDD4FE900C9C04C /* NewVC.swift */; };
+		6BE74A8B2BDD53CD00C9C04C /* DayWeatgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE74A8A2BDD53CD00C9C04C /* DayWeatgetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		189B66E62BD79AF10011AED1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		189B66EB2BD79AF30011AED1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		189B66F02BD79AF30011AED1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BE74A882BDD4FE900C9C04C /* NewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVC.swift; sourceTree = "<group>"; };
+		6BE74A8A2BDD53CD00C9C04C /* DayWeatgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayWeatgetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				189B66E62BD79AF10011AED1 /* MainViewController.swift */,
+				6BE74A882BDD4FE900C9C04C /* NewVC.swift */,
+				6BE74A8A2BDD53CD00C9C04C /* DayWeatgetTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -183,9 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BE74A8B2BDD53CD00C9C04C /* DayWeatgetTableViewCell.swift in Sources */,
 				189436262BD7DF8A0007F47C /* UIView+Ext.swift in Sources */,
 				189B66E72BD79AF10011AED1 /* MainViewController.swift in Sources */,
 				189B66E32BD79AF10011AED1 /* AppDelegate.swift in Sources */,
+				6BE74A892BDD4FE900C9C04C /* NewVC.swift in Sources */,
 				189B66E52BD79AF10011AED1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
