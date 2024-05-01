@@ -5,7 +5,7 @@
 //  Created by Vic on 30.04.2024.
 //
 import UIKit
-//MARK: - ДЗ ( BaseTableViewCell в отдельный файл)
+//MARK: - ДЗ ( BaseTableViewCell в отдельный файл)✅
 
 class BaseTableViewCell: UITableViewCell {
     
