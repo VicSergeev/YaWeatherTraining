@@ -100,7 +100,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let tbSection = TBSections(rawValue: indexPath.section)!
-        // надо ли создавать отдельный файл для верхней кастомной ячейки?
         switch tbSection {
         case .top :
             let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! HeaderTableViewCell
