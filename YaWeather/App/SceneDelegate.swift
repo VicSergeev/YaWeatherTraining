@@ -27,7 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // setup VC that will be shown in this window
         // according to task VC has to have TVCell and sections, NavController is needed, because TVContoller should be integrated into NavCont(Apple guidlines)
 		let navConroller = UINavigationController(rootViewController: MainViewController())
-		navConroller.setNavigationBarHidden(true, animated: false)
+//		navConroller.setNavigationBarHidden(true, animated: false)
+        navConroller.navigationBar.isHidden = true
         window?.rootViewController = navConroller
 		// TV integrated into NavC, assigned and initialized
     }

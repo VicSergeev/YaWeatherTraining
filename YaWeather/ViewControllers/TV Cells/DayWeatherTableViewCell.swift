@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+// MARK: - tableview weather list
 final class DayWeatherTableViewCell: BaseTableViewCell {
 
 	lazy private var dateLabel: UILabel = {
@@ -26,12 +27,11 @@ final class DayWeatherTableViewCell: BaseTableViewCell {
 		return label
 	}()
     
-    //MARK: - ДЗ (добавить горизонтальный UIStackView, в него добавить картинку и 2 UILabel) ✅
-    
     lazy private var forecastDetailStackView: UIStackView = {
         var stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 15
+        stackView.backgroundColor = .init(white: 1, alpha: 0.3)
         return stackView
     }()
     
@@ -58,6 +58,13 @@ final class DayWeatherTableViewCell: BaseTableViewCell {
         return label
     }()
 	
+    //MARK: - ДЗ (сделать сепаратор на всю длину)✅
+	lazy private var separatorView: UIView = {
+		let view = UIView()
+		view.backgroundColor = .lightGray.withAlphaComponent(0.5)
+		return view
+	}()
+ 
     // HOME TASK END
     
 	var day: DayModel? {
@@ -72,7 +79,12 @@ final class DayWeatherTableViewCell: BaseTableViewCell {
 		self.addSubview(dateLabel)
 		self.addSubview(weekDayLabel)
         self.addSubview(forecastDetailStackView)
-
+		self.addSubview(separatorView)
+		forecastDetailStackView.addArrangedSubview(forecastImage)
+		forecastDetailStackView.addArrangedSubview(forecastCurrentTempLabel)
+		forecastDetailStackView.addArrangedSubview(forecastNightTempLabel)
+		
+		
 		dateLabel.snp.makeConstraints({
 			$0.top.leading.equalToSuperview().offset(12)
 		})
@@ -80,15 +92,19 @@ final class DayWeatherTableViewCell: BaseTableViewCell {
 		weekDayLabel.snp.makeConstraints({ make in
 			make.leading.equalTo(dateLabel)
 			make.top.equalTo(dateLabel.snp.bottom).offset(4)
+			
 		})
         
         forecastDetailStackView.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(16)
-            make.bottom.equalToSuperview().inset(4)
+            make.centerY.equalToSuperview()
         }
-        forecastDetailStackView.addArrangedSubview(forecastImage)
-        forecastDetailStackView.addArrangedSubview(forecastCurrentTempLabel)
-        forecastDetailStackView.addArrangedSubview(forecastNightTempLabel)
+	
+		separatorView.snp.makeConstraints { make in
+			make.top.equalTo(weekDayLabel.snp.bottom).offset(11)
+			make.leading.trailing.bottom.equalToSuperview()
+			make.height.equalTo(0.5)
+		}
 	}
 	
 //	func configureCell(_ date: String, _ day: String){
